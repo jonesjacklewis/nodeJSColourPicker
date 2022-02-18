@@ -45,8 +45,9 @@ router.post("/", function (req, res, next) {
           "window.alert('Invalid Colour Code');window.location.href='/'"
         );
       });
+  } else {
+    res.send("window.alert('Invalid Colour Code');window.location.href='/'");
   }
-  res.send("window.alert('Invalid Colour Code');window.location.href='/'");
 });
 
 module.exports = router;

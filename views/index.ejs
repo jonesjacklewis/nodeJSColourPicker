@@ -40,7 +40,10 @@
             <p><strong>NOTE:</strong> This Is Not A Perfect Match</p>
             <% } %>
 
-              <img src="<%= imgUrl %> " alt="A square of <%= colourName %>">
+              <figure>
+                <img src="<%= imgUrl %> " alt="A square of <%= colourName %>">
+                <figcaption>Hex: <%= hex.toUpperCase() %></figcaption>
+              </figure>
 
         </div>
 
