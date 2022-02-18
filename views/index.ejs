@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>
+    <%= title %>
+  </title>
+  <link rel='stylesheet' href='/stylesheets/style.css' />
+</head>
+
+<body>
+  <header>
+    <h1>
+      <%= title %>
+    </h1>
+    <p>Welcome to <%= title %>
+    </p>
+  </header>
+
+  <main>
+
+    <div class="square-holder">
+
+      <div class="square">
+        <form action="/" method="post">
+          <label for="colourSelect">Select a Colour</label>
+          <input type="color" name="colourSelect" id="colourSelect">
+
+          <button type="submit">Get Colour Name</button>
+        </form>
+      </div>
+      <% if (method=="post" ) { %>
+        <div class="square">
+
+          <h2>
+            <%= colourName %>
+          </h2>
+
+          <% if (!perfectMatch) { %>
+            <p><strong>NOTE:</strong> This Is Not A Perfect Match</p>
+            <% } %>
+
+              <img src="<%= imgUrl %> " alt="A square of <%= colourName %>">
+
+        </div>
+
+        <% } %>
+
+
+
+    </div>
+
+
+
+  </main>
+
+  <footer>
+    <p>Created by <a href="https://www.jackljones.com/">Jack Jones</a></p>
+  </footer>
+
+  <% if (method=="post" ) { %>
+    <script>
+      document.getElementById("colourSelect").value = "<%= hex %>";
+    </script>
+    <% } %>
+
+</body>
+
+</html>
